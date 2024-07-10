@@ -1,0 +1,32 @@
+name: rustreleaser
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  rustreleaser:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build Rust code
+        run: cargo build --release
+
+      - name: Create release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: target/release/hotreloader
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get the uploaded binary URL
+        run: echo "Uploaded to ${{ steps.create_release.outputs.upload_url }}"
