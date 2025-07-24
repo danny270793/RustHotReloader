@@ -1,6 +1,6 @@
 # HotReloader
 
-[![Github pipeline status](https://github.com/danny270793/RustHotReloader/actions/workflows/releaser.yaml/badge.svg)](https://github.com/danny270793/RustHotReloader/actions/workflows/releaser.yaml)
+[![Github pipeline status](https://github.com/danny270793/RustHotReloader/actions/workflows/release.yaml/badge.svg)](https://github.com/danny270793/RustHotReloader/actions/workflows/release.yaml)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/danny270793/RustHotReloader)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/danny270793/RustHotReloader)
